@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   # before_filter :ensure_logged_in, only: [:new, :create, :destroy]
 
   def index 
-  	@reservation = Reservation.all 
+  	@reservations = Reservation.all 
   end
 
   def new
@@ -14,8 +14,9 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.create(reservation_params)
       if @reservation.save
+
       redirect_to reservations_url
     else
       render :new 
