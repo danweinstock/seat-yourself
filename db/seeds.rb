@@ -14,6 +14,7 @@ Restaurant.create!(
 	:capacity => 50,
 	:open => 11,
 	:closed => 23
+	:id => 1
 )
 
 Reservation.create!(
