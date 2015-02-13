@@ -1,7 +1,10 @@
 class ReservationsController < ApplicationController
   before_filter :ensure_logged_in, only: [:new, :create, :destroy]
-  #before_filter :load_restaurant
 
+  def index 
+  	@reservation = Reservation.all 
+  end
+  
   def show
     @reservation = Reservation.find(params[:id])
   end

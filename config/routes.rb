@@ -2,6 +2,6 @@ Rails.application.routes.draw do
 
 	resources :users
 	resources :restaurants
-	resources :reservations
+	resources :reservations   
 
 end
