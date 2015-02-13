@@ -16,27 +16,29 @@ ActiveRecord::Schema.define(version: 20150213185319) do
   create_table "reservations", force: :cascade do |t|
     t.integer  "party_size"
     t.datetime "date"
-    t.integer "restaurant_id"
-    t.integer "user_id"
+    t.integer  "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  add_index "reservations", ["restaurant_id"], name: "index_reservations_on_restaurant_id"
-  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
-
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
     t.integer  "capacity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "open"
+    t.integer  "closed"
+    t.string   "cuisine"
+    t.string   "neighbourhood"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "password"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
