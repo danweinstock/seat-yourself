@@ -1,7 +1,11 @@
 class ReservationsController < ApplicationController
   before_filter :ensure_logged_in, only: [:new, :create, :destroy]
-  before_filter :load_restaurant
+  # before_filter :load_restaurant
 
+  def index 
+  	@reservation = Reservation.all 
+  end
+  
   def show
     @reservation = Reservation.find(params[:id])
   end
@@ -32,7 +36,7 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:restaurant_id, :party_size, :time)
   end
 
-  def load_restaurant
-    @Restaurant = Restaurant.find(params[:restaurant_id])
-  end
+  # def load_restaurant
+  #   @Restaurant = Restaurant.find(params[:restaurant_id])
+  # end
 end
