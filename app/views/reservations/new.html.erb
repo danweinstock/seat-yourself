@@ -1,17 +1,8 @@
 <h1>Make a Reservation</h1>
 
 <%= form_for @reservation do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
+
+  <div class="field"> 
     <%= f.label :party_size %><br/>
     <%= f.number_field :party_size %>
   </div>
