@@ -1,3 +1,4 @@
+ 
 <h1>Make a Reservation</h1>
 
 <%= form_for @reservation do |f| %>
@@ -6,10 +7,16 @@
     <%= f.label :party_size %><br/>
     <%= f.number_field :party_size %>
   </div>
-  <div class="field">
+
+   <div class="field">
     <%= f.label :date %><br/>
     <%= f.datetime_field :date %>
   </div>
+
   <div class="actions"><%= f.submit %>
   </div>
 <% end %>
+
+ 
+
+ 

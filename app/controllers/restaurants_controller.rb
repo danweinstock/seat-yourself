@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def show
-		@restaurant = Restaurant.find[(:id)]
+		@restaurant = Restaurant.find[pa(:id)]
 	end
 
 	def new
@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def create
-		@restaurant = Restaurant.new(restaurant_params)
+		@restaurant = Restaurant.create(restaurant_params)
 
 		if @restaurant.save
 			redirect_to restaurants_url
