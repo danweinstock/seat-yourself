@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-	before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
+	#before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
 	def index
 		@restaurants = Restaurant.all
 	end
@@ -36,7 +36,7 @@ class RestaurantsController < ApplicationController
 	private
 
 	def restaurant_params
-		params.require(:restaurant).permit(:name, :address, :phone_number, :picture, :description, :cuisine, :capacity, :neighbourhood)
+		params.require(:restaurant).permit(:name, :cuisine, :capacity)
 	end
 	
 end

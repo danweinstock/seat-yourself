@@ -3,32 +3,25 @@
     <%= f.label :name %> 
     <%= f.text_field :name %>
 </div>
-
-<div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-</div>
-
-<div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-</div>
+<br>
 
 <div class="field">
     <%= f.label :capacity %>
     <%= f.number_field :capacity %>
 </div>
-
+<br>
 <div class="field">
-    <%= f.label "Opening time" %>
-    <%= f.time_select :hours_open, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, minute_step: 15, ampm: true %>
+    <%= f.label :cuisine %>
+    <%= f.text_field :cuisine %>
 </div>
-
+<br>
 <div class="field">
-    <%= f.label "Closing time" %>
-    <%= f.time_select :hours_closed, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, minute_step: 15, ampm: true  %>
+    <%= check_box_tag(:gluten_free) %>
+    <%= label_tag(:gluten_free, "We offer gluten free options") %>
+    <%= check_box_tag(:romantic) %>
+    <%= label_tag(:romantic, "Good for a romantic meal") %>
 </div>
-
+<br>
 <%= f.submit class: :button %>
 
 <% end %>
