@@ -1,11 +1,11 @@
 class RestaurantsController < ApplicationController
-	before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
+	#before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
 	def index
 		@restaurants = Restaurant.all
 	end
 
 	def show
-		@restaurant = Restaurant.find[params(:id)]
+		@restaurants = Restaurant.find[params(:id)]
 	end
 
 	def new
