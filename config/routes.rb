@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
 	resources :users
 	resources :restaurants
-	resources :reservations   
+	resources :reservations 
+
+	resources :sessions
+	
+	get 'login' => 'sessions#new', as: :login
 
 end
