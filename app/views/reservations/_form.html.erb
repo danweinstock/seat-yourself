@@ -1,0 +1,38 @@
+<%= form_for([@restaurant, @reservation]) do |f| %>
+
+  <% if @reservation.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@reservation.errors.count, "error")%>
+          prohibited this reeservation from being made:
+        </h2>
+        <ul>
+          <% @reservation.errors.full_messages.each do |message|%>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="field"> 
+    <%= f.label :party_size %><br/>
+    <%= f.number_field(:party_size, {step:1, within: 1...26}) %>
+  </div>
+
+   <div class="field">
+    <%= f.label :date %><br/>
+    DD-MM-YYYY<%= f.datetime_field :date %>
+  </div>
+
+   <div class="field">
+    <%= f.label :time %><br/>
+    <%= f.select(:time, reservation_time_select(@restaurant))%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+ 
