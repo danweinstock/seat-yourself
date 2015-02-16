@@ -1,11 +1,11 @@
 class RestaurantsController < ApplicationController
-
+	before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
 	def index
 		@restaurants = Restaurant.all
 	end
 
 	def show
-		@restaurant = Restaurant.find[pa(:id)]
+		@restaurant = Restaurant.find[params(:id)]
 	end
 
 	def new
@@ -13,14 +13,25 @@ class RestaurantsController < ApplicationController
 	end
 
 	def create
-		@restaurant = Restaurant.create(restaurant_params)
+		@restaurant = Restaurant.new(restaurant_params)
 
 		if @restaurant.save
-			redirect_to restaurants_url
+			redirect_to restaurant_path(@restaurant), notice: "The following restaurant was successfully created"
 		else
-			render :new 
-		end
+			flash.now[:alert] = "There was a mistake while creating the restaurant"
+			render :new
+		end 
 	end
+
+	def edit
+		@restaurant = Restaurant.find(params[:id])
+	end 
+
+	def destroy
+		@restaurant = Restaurant.find(params[:id])
+		@restaurant.destroy
+		redirect_to restaurants_url
+	end 
 
 	private
 
