@@ -25,11 +25,12 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to @restaurant, notice: "Your reseveration has been successfully created"
     else
-      render 'restaurants/show'
-    end
-  end  
+      flash.now[:alert] = "Error saving reservation"
+      render 'restaurants/show'  
+    end  
+  end
   # @reservation.save ? redirect_to(restaurants_path, notice: "Your reservation was successfully created!") : render("restaurants/show")
-  # end
+  
 
   def edit
     @reservation = Reservation.find(params[:id])
@@ -58,12 +59,9 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:restaurant_id, :party_size, :time, :date, :user_id)
-    # binding.pry
-
   end
 
   def load_restaurant
-    # binding.pry
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end

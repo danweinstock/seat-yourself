@@ -5,7 +5,7 @@
 # 		:email => "dtart@gmail.com",
 # 	)
 # end
-User.find_or_create_by(email: "dtart@gmail.com", name: "Donna Tart")
+# User.find_or_create_by(email: "dtart@gmail.com", name: "Donna Tart")
 
 Restaurant.create!(
 	:name => "Little Pepper" ,
