@@ -16,7 +16,7 @@
 
   <div class="field"> 
     <%= f.label :party_size %><br/>
-    <%= f.number_field(:party_size, {step:1, within: 1...26}) %>
+    <%= f.number_field(:party_size, {step:1, within: 1..26}) %>
   </div>
 
    <div class="field">
@@ -24,10 +24,7 @@
     DD-MM-YYYY<%= f.datetime_field :date %>
   </div>
 
-   <div class="field">
-    <%= f.label :time %><br/>
-    <%= f.select(:time, reservation_time_select(@restaurant))%>
-  </div>
+
 
   <div class="actions">
     <%= f.submit %>

@@ -3,8 +3,16 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
 	resources :users
-	resources :restaurants
-	resources :reservations 
+
+	resources :restaurants do
+		resources :reservations, only: [:new, :destroy, :index]
+	end
+
+	resources :reservations
+		
+	
+		
+
 
 	resources :sessions
 	
