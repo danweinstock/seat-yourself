@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
+  before_filter :load_restaurant
   before_filter :ensure_logged_in, only: [:create, :edit, :update, :destroy]
-  before_filter :load_restaurant, :except => [:index]
+  
 
   def index 
   	@reservations = Reservation.all 
@@ -19,27 +20,23 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
    
     if @reservation.save
-      redirect_to @restaurant, notice: "Your reseveration has been successfully created"
+      redirect_to reservations_path, notice: "Your reseveration has been successfully created"
     else
-      render 'restaurants/show'
-    end
-  end  
+      flash.now[:alert] = "Error saving reservation"
+      render 'restaurants/show'  
+    end  
+  end
   # @reservation.save ? redirect_to(restaurants_path, notice: "Your reservation was successfully created!") : render("restaurants/show")
-  # end
+  
 
   def edit
     @reservation = Reservation.find(params[:id])
   end
 
-  # def update
-  #   @reservation = Reservation.find(params[:id])
-  #   @reservation.update(reservation_params) ? redirect_to({ controller: "restaurants", action: "show" , id: @restaurant.id }, notice: "Your reseveration has been successfully updated ") : render(:edit)          
-  # end
-
   def update 
     @reservation = Reservation.find(params[:id])
     if @reservation.update_attributes(reservation_params)
-      redirect_to reservations_url
+      redirect_to reservations_path
     else
       render :edit
     end 
@@ -48,6 +45,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     reservations.destroy
+    redirect_to reservations_path
   end
 
   private   
