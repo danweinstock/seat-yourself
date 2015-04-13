@@ -1,0 +1,127 @@
+<div class="header">
+
+	<ul>
+		<li id="header-logo">
+		<%image_tag("banner_resto.jpg") %>
+		</li>
+		<li><a href="http://">Choose Your Location</a></li>
+		<li><a href="http://">Sign In</a></li>
+		<li><a href="http://">Sign Up</a></li>
+	</ul>
+
+	<div class="social-media">
+	      <%=image_tag("twitterlogo-black.svg") %>
+	      <%=image_tag("googleplus_black.svg")%>
+	      <%image_tag("facebook-black.svg")%>   
+	</div>
+
+</div>
+
+
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+			<section class="banner">
+				<img src="http://www.sydney.com/sites/sydney/files/background-pyrmont_0.jpg">
+				<h2>Hungry? You've come to the right place!</h2>
+					<h3>Ticket to the Best Seat in the House</h3>
+						<p>SeatYourself is Toronto's first stop to the city's hottest restaurants. Book early and book and book often.</p>
+			</section>
+
+		
+			
+			<!-- ...............javascript starts here.............. -->
+<%= javascript_include_tag "jquery.flexslider-min" %>
+	<div class="flexslider-wrap">
+		<div class="flexslider">
+			<ul class="slides">
+				<li><%=image_tag("dish1.jpg")%> </li>
+				<li><%=image_tag("dish3.jpg")%></li>
+				<li><%=image_tag("dish4.jpg")%></li>
+				<li><%=image_tag("dish5.jpg")%></li>
+			</ul>
+		</div>
+	</div>
+</div>
+		
+
+			<!-- Column 1 end -->
+		</div>
+		<div class="col2">
+			<!-- Column 2 start -->
+
+			<h2>Featured Restaurant</h2>
+			<p>From the people that brought you the inimitable and clever Bar Isabel, a new offering further east on College Street.</p>
+			<h2>Name of Restaurant Here</h2>
+
+			<p>If you haven't come across it just yet, here's what the good people at VICE had to say about it <a href="https://www.vice.com/en_ca/video/bar-isabel">Bar Isabel</a> To make your website as optimised as possible your main page content must come before the side columns. This layout does exactly that: The the left-hand main page comes first, then the right column (see the nested div structure diagram for more info). The columns can also be configured in the opposite order if required.</p>
+			
+
+			<p>This layout requires no images. Many CSS website designs need images to colour in the column backgrounds but that is not necessary with this design. Why waste bandwidth and precious HTTP requests when you can do everything in pure CSS and XHTML?</p>
+			
+			<p>Want to see your favorite restaurant featured here?</p>
+			<h3>Tip us off with any of the following links</h3>
+
+			<ul>
+				<li>Safari</li>
+			</ul>
+			<!-- Column 2 end -->
+		</div>
+	</div>
+<!-- </div> -->
+
+<div id="footer">
+	<div class="footer-block">
+		<h6>SeatYourself</h6>
+			<ul>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Blog</a></li>
+				<li><a href="">Careers</a></li>
+				<li><a href="">Press</a></li>
+				<li><a href="">Advertise</a></li>
+			</ul>
+	</div>
+
+	<div class="footer-block">
+  	<h6>Restaurateurs</h6>
+    	<a class="button small with-arrow text-arrow-right" href="http://www.opentable.com/opentable-restaurant-management-system">Delight more diners</a>
+      <a class="button small with-arrow text-arrow-right" href="http://openforbusiness.opentable.com" target="_blank">Open for Business Blog</a>
+      
+    <h6>Join us on</h6>
+    	<div class="footer-social-links">
+      	<a href="http://twitter.com" class="footer-social-link twitter"></a>
+        <a href="http://www.facebook.com" class="footer-social-link facebook"></a>
+        <a href="http://plus.google.com" class="footer-social-link google"></a>
+       </div>
+  </div>
+  
+  <div class="footer-base">
+  	<span class="footer-copyright">Copyright &copy; 2015 SeatYourself - All rights reserved. </span> <br />
+	</div>
+
+<script>
+			$(document).ready(function() {
+					$('.flexslider').flexslider({
+					 animation : "slide",
+					 animationSpeed : 2000,
+					 reverse: true
+					});
+			});
+
+				$(function() {
+				  $('a[href*=#]:not([href=#])').click(function() {
+				    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				      var target = $(this.hash);
+				      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				      if (target.length) {
+				        $('html,body').animate({
+				          scrollTop: target.offset().top
+				        }, 1000);
+				        return false;
+				      }
+				    }
+				  });
+				});
+
+		</script>	
