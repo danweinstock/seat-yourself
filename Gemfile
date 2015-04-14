@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
  gem 'geocoder'
 
+ gem 'font-awesome-sass'
+
+ gem 'foundation-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
