@@ -1,8 +1,19 @@
 <h1> All Reservations</h1>
 
-<% @reservations.each do |reservation| %>
-	<p><%= reservation.party_size%>, <%= reservation.date%></p>
-<% end %>
+<dl>
+  <% @reservations.newest_first.each do |reservation| %>
+  <div>
+    <dt><%= link_to reservations.name, _path(assign.id)%></dt>
+    <dd>Party Size: <%= reservation.party_size %></dd>
+    <dd>Reservation Date: <%=reservation.date.strftime("%B %e, %Y") %></dd>
+    <dd>Reservation Time: <%=reservation.time.strftime("%l:%M %P") %></dd>
+  </div>
+  <% end %>
+</dl>
+
+
+
+
 
 
  
