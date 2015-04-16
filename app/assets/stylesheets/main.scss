@@ -1,22 +1,60 @@
+
+// <<<.......styles for main body items...........>>>
 body {
-	margin:0;
-	padding:0;
-	border:0;			/* This removes the border around the viewport in old versions of IE */
-	width:100%;
-	background:#fff;
-	min-width:600px;    	/* Minimum width of layout - remove line if not required */
-					/* The min-width property does not work in old versions of Internet Explorer */
-	font-size:90%;
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-a {
-	color:#369;
+#header {
+	display: flex;
+	clear:both;
+	width:100%;
+	height: 4em;
 }
-a:hover {
-	color:#fff;
-	background:#369;
-	text-decoration:none;
+
+.sy-logo {
+    width: 120px;
+    height: 100px;
+    display: inline;
 }
+
+
+.main-content {
+    flex: 1;
+    background: #ffc94e;
+}
+.sidebar {
+    flex: 0 0 28em;
+    border: 1px solid black;
+}
+
+
+// <<<.......styles for nav items and social media icons...........>>>
+
+.social-icon {
+   padding-right: 5px;
+    width: 50px;
+    height: 50px;
+    display: inline;
+    float: right;
+}
+
+.anchor-grey {
+    list-style: none;
+    font-family: "Montserrat";
+    font-size: .9em;
+    color: #2F4F4F;
+    letter-spacing: 1px;
+    padding: 10px;
+} 
+
+li a:hover {
+    color: #7FFFD4;
+} 
+
 h1, h2, h3 {
 	margin:.8em 0 .2em 0;
 	padding:0;
@@ -28,76 +66,9 @@ p {
 img {
 	margin:10px 0 5px;
 }
-#ads img {
-	display:block;
-	padding-top:10px;
-}
+
 
 /* Header styles */
-.header {
-	clear:both;
-	float:left;
-	width:100%;
-}
-.header {
-	border-bottom:1px solid #000;
-}
-.header p,
-.header h1,
-.header h2 {
-	padding:.4em 15px 0 15px;
-	margin:0;
-}
-.header ul {
-	clear:left;
-	float:left;
-	width:100%;
-	list-style:none;
-	margin:10px 0 0 0;
-	padding:0;
-}
-.header ul li {
-	display:inline;
-	list-style:none;
-	margin:0;
-	padding:0;
-}
-#header-logo {
-	display:block;
-	padding-bottom: 20px;
-	width: 250px;
-	height: 200px;
-	margin-left: auto;
-	margin-right: auto;
-}
-.header ul li a {
-	display:block;
-	float:left;
-	margin:0 0 0 1px;
-	padding:3px 10px;
-	text-align:center;
-	background:#eee;
-	color:#000;
-	text-decoration:none;
-	position:relative;
-	left:15px;
-	line-height:1.3em;
-}
-.header ul li a:hover {
-	background:#369;
-	color:#fff;
-}
-.header ul li a.active,
-.header ul li a.active:hover {
-	color:#fff;
-	background:#000;
-	font-weight:bold;
-}
-.header ul li a span {
-	display:block;
-	border: 1px black solid;
-}
-
 
 
 .banner {
@@ -110,54 +81,6 @@ img {
 /* 'widths' sub menu */
 
 
-#layoutdims {
-	clear:both;
-	background:#eee;
-	border-top:4px solid #000;
-	margin:0;
-	padding:6px 15px !important;
-	text-align:right;
-}
-/* column container */
-.colmask {
-	position:relative;	/* This fixes the IE7 overflow hidden bug */
-	clear:both;
-	float:left;
-	width:100%;			/* width of whole page */
-	overflow:hidden;		/* This chops off any overhanging divs */
-}
-/* common column settings */
-.colright,
-.colmid,
-.colleft {
-	float:left;
-	width:100%;
-	position:relative;
-}
-.col1,
-.col2,
-.col3 {
-	float:left;
-	position:relative;
-	padding:0 0 1em 0;
-	overflow:hidden;
-}
-/* 2 Column (right menu) settings */
-.rightmenu {
-	background:#eee;		/* right column background colour */
-}
-.rightmenu .colleft {
-	right:25%;			/* right column width */
-	background:#fff;		/* left column background colour */
-}
-.rightmenu .col1 {
-	width:71%;			/* left column content width (left column width minus left and right padding) */
-	left:27%;			/* (right column width) plus (left column left padding) */
-}
-.rightmenu .col2 {
-	width:21%;			/* right column content width (right column width minus left and right padding) */
-	left:31%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
-}
 /* Gaston Avatar */
 
 #gaston {

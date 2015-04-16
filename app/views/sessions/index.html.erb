@@ -1,76 +1,67 @@
-<div class="header">
-
-	<ul>
-		<li id="header-logo">
-		<img src="/assets/new_sy_logo.jpg">
-		</li>
-		<li><a href="http://">Choose Your Location</a></li>
-		<li><a href="http://">Sign In</a></li>
-		<li><a href="http://">Sign Up</a></li>
-	</ul>
-
-	
-
 <body>
+<!-- ..........new nav and social media here............ -->
+<div id="header">
+	<img src="/assets/new_sy_logo.jpg" class="sy-logo">
 
-<div style="position:relative">
+	<nav> 
+	   <ul>
+	     <li><a href="http://" class="anchor-grey">CHOOSE YOUR LOCATION</a></li>
+	     <li><a href="http://" class="anchor-grey">SIGN IN</a></li>
+	     <li><a "http://" class="anchor-grey">SIGN UP</a></li>
+	   </ul>
+	</nav>
+          
+	<div class="social-media">
+	 	<a href="http://twitter.com">
+	  <img src="/assets/twitterlogo-black.svg" alt="Twitterlogo black" class="social-icon"></a>
+		<a href="heep://facebook.com"><img src="/assets/facebook-black.svg" alt="Facebook logo" class="social-icon"></a>
+		<img src="/assets/googleplus_black.svg" alt="googleplus logo" class="social-icon"></a>
+	</div>
+
+</div> 
+
+<!-- ..........main content and javascript maitre'd goes here............ -->
+
+<div class="main-content">
     <div id="gaston" style="position:absolute;">
     <%=image_tag("gaston.png")%></div>
-</div>
-</div>
+		</div>
 
-<div class="colmask rightmenu">
-	<div class="colleft">
-		<div class="col1">
-			<!-- Column 1 start -->
-			<section class="banner">
-				<img src="http://www.sydney.com/sites/sydney/files/background-pyrmont_0.jpg">
+		<section class="banner">
+			<img src="http://idiva.com/photogallery-entertainment/top-10-celebrity-restaurants-in-india/13688">
 				<h2>Hungry? You've come to the right place!</h2>
-					<h3>Ticket to the Best Seat in the House</h3>
-						<p>SeatYourself is Toronto's first stop to the city's hottest restaurants. Book early and book and book often.</p>
-			</section>
+				<h3>Ticket to the Best Seat in the House</h3>
+					<p>SeatYourself is Toronto's first stop to the city's hottest restaurants. Book early and book and book often.</p>
+		</section>
 
-		
-			
-			<!-- ...............javascript starts here.............. -->
-<%= javascript_include_tag "jquery.flexslider-min" %>
-	<div class="flexslider-wrap">
-		<div class="flexslider">
-			<ul class="slides">
-				<li><%=image_tag("dish1.jpg")%> </li>
-				<li><%=image_tag("dish3.jpg")%></li>
-				<li><%=image_tag("dish4.jpg")%></li>
-				<li><%=image_tag("dish5.jpg")%></li>
-			</ul>
-		</div>
-	</div>
+		<%= javascript_include_tag "jquery.flexslider-min" %>
+			<div class="flexslider-wrap">
+				<div class="flexslider">
+					<ul class="slides">
+						<li><%=image_tag("dish1.jpg")%> </li>
+						<li><%=image_tag("dish3.jpg")%></li>
+						<li><%=image_tag("dish4.jpg")%></li>
+						<li><%=image_tag("dish5.jpg")%></li>
+					</ul>
+				</div>
+			</div>
 </div>
 		
 
-			<!-- Column 1 end -->
-		</div>
-		<div class="col2">
-			<!-- Column 2 start -->
+<!-- ..........sidebar begins here............ -->
+<section class="sidebar">
+	<h2>Featured Restaurant</h2>
+		<p>From the people that brought you the inimitable and clever Bar Isabel, a new offering further east on College Street.</p>
 
-			<h2>Featured Restaurant</h2>
-			<p>From the people that brought you the inimitable and clever Bar Isabel, a new offering further east on College Street.</p>
-			<h2>Name of Restaurant Here</h2>
+	<h2>Name of Restaurant Here</h2>
 
-			<p>If you haven't come across it just yet, here's what the good people at VICE had to say about it <a href="https://www.vice.com/en_ca/video/bar-isabel">Bar Isabel</a> To make your website as optimised as possible your main page content must come before the side columns. This layout does exactly that: The the left-hand main page comes first, then the right column (see the nested div structure diagram for more info). The columns can also be configured in the opposite order if required.</p>
-			
-
-			<p>This layout requires no images. Many CSS website designs need images to colour in the column backgrounds but that is not necessary with this design. Why waste bandwidth and precious HTTP requests when you can do everything in pure CSS and XHTML?</p>
-			
-			<p>Want to see your favorite restaurant featured here?</p>
-			<h3>Tip us off with any of the following links</h3>
-
-			<ul>
-				<li>Safari</li>
-			</ul>
-			<!-- Column 2 end -->
-		</div>
-	</div>
-<!-- </div> -->
+		<p>If you haven't come across it just yet, here's what the good people at VICE had to say about it <a href="https://www.vice.com/en_ca/video/bar-isabel">Bar Isabel</a> To make your website as optimised as possible your main page content must come before the side columns. This layout does exactly that: The the left-hand main page comes first, then the right column (see the nested div structure diagram for more info). The columns can also be configured in the opposite order if required.</p>
+				
+		<p>Want to see your favorite restaurant featured here?</p>
+		
+		<h3>Tip us off with any of the following links</h3>
+	</section>
+<!-- ..........footer begins here............ -->
 
 <div id="footer">
 	<div class="footer-block">
@@ -88,19 +79,13 @@
   	<h6>Restaurateurs</h6>
     	<a class="button small with-arrow text-arrow-right" href="http://www.opentable.com/opentable-restaurant-management-system">Delight more diners</a>
       <a class="button small with-arrow text-arrow-right" href="http://openforbusiness.opentable.com" target="_blank">Open for Business Blog</a>
-      
-    <h6>Join us on</h6>
-    	<div class="social-media">
-	      <img src="/assets/twitterlogo-black-944a14afb055241753045da6be1b584c.svg" alt="Twitterlogo black" style="height: 50px;">
-	      <img src="/assets/googleplus_black-9d60e5f1e212678a8ca6cf0a1792159d.svg" alt="Googleplus black" style="height: 50px;">
-	      <img src="/assets/facebook-black.svg" style="height: 50px">  
-	</div>
-       </div>
   </div>
   
   <div class="footer-base">
   	<span class="footer-copyright">Copyright &copy; 2015 SeatYourself - All rights reserved. </span> <br />
 	</div>
+
+<!-- ..........js for flexslider bar............ -->	
 
 <script>
 			$(document).ready(function() {
@@ -132,3 +117,6 @@
 });
     
 		</script>	
+
+
+</body>		
